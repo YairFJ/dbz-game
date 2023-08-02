@@ -5,13 +5,13 @@ class Character:
         self.__velocidad = velocidad
         self.__vida = vida
 
-    @property
+    @property          #Property es un decorador que nos permite llamar a un método como atributo
     def nombre(self):
         return self.__nombre
 
 
-    @nombre.setter
-    def nombre(self, new_value):
+    @nombre.setter      # Este seria un setter(para modificar el atributo)
+    def nombre(self, new_value):        #Las propiedades están puestas privadas sólo para modo de práctica
         self.__nombre = new_value
 
     
@@ -35,7 +35,7 @@ class Character:
         self.__velocidad = new_value
 
 
-    @property
+    @property       
     def vida(self):
         return self.__vida
 
@@ -45,11 +45,11 @@ class Character:
         self.__vida = new_value
        
 
-    def __repr__(self):
+    def __repr__(self):  # Método especial que nos da una representació del objeto como String
         return f"Nombre: {self.nombre}, Fuerza: {self.fuerza}, Velocidad: {self.velocidad}, Vida: {self.vida}"
 
     
-    def __add__(self, otro):
+    def __add__(self, otro):    # Método especial que nos indica que hacer al sumar dos objetos de esta clase.
         new_f = round(((self.fuerza + otro.fuerza)/2)**2)
         new_v = round(((self.velocidad + otro.velocidad)/2)**2)
         new_h = round(((self.vida + otro.vida)/2)**2)
